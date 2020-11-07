@@ -1,0 +1,48 @@
+.sidebarOptions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 20px 3px;
+}
+.sidebarOptions__icon {
+  color: #606060;
+  font-size: x-large !important;
+}
+.sidebarOptions__title {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 500;
+}
+.sidebarOptions:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.sidebarOptions:hover > .sidebarOptions__icon {
+  color: red;
+}
+.sidebarOptions:hover > .sidebarOptions__title {
+  font-weight: bold;
+}
+.sidebarOptions.selected {
+  background: lightgray;
+}
+.sidebarOptions.selected > .sidebarOptions__icon {
+  color: red;
+}
+.sidebarOptions.selected > .sidebarOptions__title {
+  font-weight: bold;
+}
+@media only screen and (min-width: 576px) {
+  .sidebarOptions {
+    flex-direction: row;
+  }
+  .sidebarOptions__title {
+    margin-left: 20px;
+    font-size: 15px;
+  }
+  .sidebarOptions {
+    padding: 10px 20px;
+  }
+}

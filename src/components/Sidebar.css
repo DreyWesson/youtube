@@ -1,0 +1,35 @@
+.sidebar__Y {
+  /* flex: 0.1;
+  position: fixed; */
+}
+
+.sidebar__X {
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: #fff;
+  z-index: 999;
+  padding-bottom: 2px;
+}
+
+.sidebar__others {
+  display: none;
+}
+@media only screen and (min-width: 576px) {
+  .sidebar__Y {
+    flex: 0.15;
+    position: sticky;
+    top: 65px;
+  }
+  .sidebar__others {
+    display: block;
+  }
+  .sidebar__Y > hr {
+    height: 1px;
+    border: 0;
+    background-color: lightgray;
+    margin: 10px 0;
+  }
+}
