@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import MenuIcon from "@material-ui/icons/Menu";
 import {
@@ -9,14 +9,18 @@ import {
 } from "@material-ui/icons";
 import { Avatar } from "@material-ui/core";
 import { useScrollPosition } from "../scroll";
+import { useDispatch } from "react-redux";
+import { setScroll } from "../actions/scrollActions";
 
 function Header() {
   const [hideOnScroll, setHideOnScroll] = useState(true);
+  const dispatch = useDispatch();
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
       const isShow = currPos.y > prevPos.y;
       if (isShow !== hideOnScroll) setHideOnScroll(isShow);
+      dispatch(setScroll(hideOnScroll));
     },
     [hideOnScroll]
   );

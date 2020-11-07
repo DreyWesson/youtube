@@ -10,11 +10,15 @@ import {
   WhatshotOutlined,
 } from "@material-ui/icons";
 import React from "react";
+import { useSelector } from "react-redux";
 import "./Sidebar.css";
 import SidebarOptions from "./SidebarOptions";
 
 function Sidebar() {
-  console.log(window.screen.width);
+  // Getting the state of scroll from header.js through redux
+  const { hideOnScroll } = useSelector((state) => state.scrollReducer);
+  console.log(hideOnScroll);
+
   return (
     <div className="sidebar">
       <div className={window.screen.width > 568 ? "sidebar__Y" : "sidebar__X"}>

@@ -27,13 +27,10 @@ export function useScrollPosition(effect, deps, element, useWindow, wait) {
 
   useLayoutEffect(() => {
     const handleScroll = () => {
-      if (wait) {
-        if (throttleTimeout === null) {
-          throttleTimeout = setTimeout(callBack, wait);
-        }
-      } else {
-        callBack();
-      }
+      wait
+        ? throttleTimeout === null &&
+          (throttleTimeout = setTimeout(callBack, wait))
+        : callBack();
     };
 
     window.addEventListener("scroll", handleScroll);
